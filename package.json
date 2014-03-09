@@ -26,7 +26,8 @@
     "adm-zip": "~0.4.4",
     "i18n": "~0.4.1",
     "universal-analytics": "~0.3.4",
-    "node-uuid": "~1.4.1"
+    "node-uuid": "~1.4.1",
+    "handlebars": "~2.0.0-alpha.2"
   },
   "devDependencies": {
     "grunt": "~0.4.2",
@@ -36,6 +37,7 @@
     "grunt-contrib-compass": "~0.7.1",
     "load-grunt-tasks": "~0.4.0",
     "grunt-bg-shell": "~2.3.1",
+    "grunt-contrib-handlebars": "~0.7.0",
     "grunt-concurrent": "~0.5.0",
     "time-grunt": "~0.2.10"
   }

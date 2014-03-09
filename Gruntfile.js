@@ -11,6 +11,12 @@ module.exports = function(grunt) {
         files: ['sass/{,*/}*.{scss,sass}'],
         tasks: ['compass']
       },
+      handlebars: {
+        files: [
+          'templates/**/*.hbs'
+        ],
+        tasks: ['handlebars']
+      },
       livereload: {
         options: { livereload: true },
         files: [
@@ -30,9 +36,24 @@ module.exports = function(grunt) {
         }
       }
     },
+    handlebars: {
+      compile: {
+        options: {
+          processName: function(filename) {
+            return filename.replace('templates/', '').replace('.hbs', '');
+          },
+          partialRegex: /.*/,
+          partialsPathRegex: /\/partials\//
+        },
+        files: {
+          'js/templates.js': 'templates/**/*.hbs'
+        }
+      }
+    },
     concurrent: {
       boot: [
-        'compass'
+        'compass',
+        'handlebars'
       ],
     },
     bgShell: {
